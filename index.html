@@ -3,184 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <title>Сalculator</title>
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css">
   </head>
   <body>
     <main>
       <div class="container">
-        <div class="calc">
-          <div class="calc-display">
-            <input
-              disabled
-              type="text"
-              id="display"
-              value="0"
-              name=""
-              placeholder="000000000000000000"
-              class="calc-display-input"
-            />
+        <div class="calculator">
+          <div class="display">
+            <input disabled type="text" value="0" id="display" class="display-input"/>
           </div>
-          <div class="calc-buttons">
-            <table class="calc-table">
-              <tr class="calc-buttons-row">
-                <td>
-                  <button
-                    type="button"
-                    class="clear-btn btn btn-hover-red"
-                    id="ce"
-                  >
-                    ce
-                  </button>
-                </td>
-                <td>
-                  <button
-                    type="button"
-                    class="clear-btn btn btn-hover-red"
-                    id="c"
-                  >
-                    c
-                  </button>
-                </td>
-                <td>
-                  <button
-                    type="button"
-                    class="operator btn btn-hover-orange"
-                  >
-                    /
-                  </button>
-                </td>
-                <td>
-                  <button
-                    type="button"
-                    class="operator btn btn-hover-orange"
-                  >
-                    *
-                  </button>
-                </td>
-              </tr>
-              <tr class="calc-buttons-row">
-                <td>
-                  <button
-                    type="button"
-                    class="number btn-hover-green btn"
-                  >
-                    7
-                  </button>
-                </td>
-                <td>
-                  <button
-                    type="button"
-                    class="number btn-hover-green btn"
-                  >
-                    8
-                  </button>
-                </td>
-                <td>
-                  <button
-                    type="button"
-                    class="number btn-hover-green btn"
-                  >
-                    9
-                  </button>
-                </td>
-                <td>
-                  <button
-                    type="button"
-                    class="operator btn btn-hover-orange"
-                  >
-                    -
-                  </button>
-                </td>
-              </tr>
-              <tr class="calc-buttons-row">
-                <td>
-                  <button
-                    type="button"
-                    class="number btn-hover-green btn"
-                  >
-                    4
-                  </button>
-                </td>
-                <td>
-                  <button
-                    type="button"
-                    class="number btn-hover-green btn"
-                  >
-                    5
-                  </button>
-                </td>
-                <td>
-                  <button
-                    type="button"
-                    class="number btn-hover-green btn"
-                  >
-                    6
-                  </button>
-                </td>
-                <td>
-                  <button
-                    type="button"
-                    class="operator btn btn-hover-orange"
-                  >
-                    +
-                  </button>
-                </td>
-              </tr>
-              <tr class="calc-buttons-row">
-                <td>
-                  <button
-                    type="button"
-                    class="number btn-hover-green btn"
-                  >
-                    1
-                  </button>
-                </td>
-                <td>
-                  <button
-                    type="button"
-                    class="number btn-hover-green btn"
-                  >
-                    2
-                  </button>
-                </td>
-                <td>
-                  <button
-                    type="button"
-                    class="number btn-hover-green btn"
-                  >
-                    3
-                  </button>
-                </td>
-                <td rowspan="2">
-                  <button
-                    type="button"
-                    class="operator btn btn-equal btn-hover-orange"
-                    id="result"
-                  >
-                    =
-                  </button>
-                </td>
-              </tr>
-              <tr class="calc-buttons-row">
-                <td colspan="2">
-                  <button
-                    type="button"
-                    class="number btn-hover-green btn btn-long"
-                  >
-                    0
-                  </button>
-                </td>
-                <td>
-                  <button
-                    type="button"
-                    class="btn btn-hover-orange"
-                    id="decimal"
-                  >
-                    .
-                  </button>
-                </td>
-              </tr>
-            </table>
+          <div class="buttons">
+            <div class="btn-box">
+              <button type="button" class="btn btn-blue" id="e">e</button>
+            </div>
+            <div class="btn-box">
+              <button type="button" class="btn btn-blue" id="pi">π</button>
+            </div>
+            <div class="btn-box">
+              <button type="button" class="btn btn-blue" id="x2">x<sup>2</sup></button>
+            </div>
+            <div class="btn-box">
+              <button type="button" class="btn btn-blue" id="sqr-root">√x</button>
+            </div>
+            <div class="btn-box">
+              <button type="button" class="btn btn-red" id="ce">CE</button>
+            </div>
+            <div class="btn-box">
+              <button type="button" class="btn btn-red" id="c">C</button>
+            </div>
+            <div class="btn-box">
+              <button type="button" class="operator btn btn-orange">/</button>
+            </div>
+            <div class="btn-box">
+              <button type="button" class="operator btn btn-orange">*</button>
+            </div>
+            <div class="btn-box">
+              <button type="button" class="number btn btn-grey">7</button>
+            </div>
+            <div class="btn-box">
+              <button type="button" class="number btn btn-grey">8</button>
+            </div>
+            <div class="btn-box">
+              <button type="button" class="number btn btn-grey">9</button>
+            </div>
+            <div class="btn-box">
+              <button type="button" class="operator btn btn-orange">-</button>
+            </div>
+            <div class="btn-box">
+              <button type="button" class="number btn btn-grey">4</button>
+            </div>
+            <div class="btn-box">
+              <button type="button" class="number btn btn-grey">5</button>
+            </div>
+            <div class="btn-box">
+              <button type="button" class="number btn btn-grey">6</button>
+            </div>
+            <div class="btn-box">
+              <button type="button" class="operator btn btn-orange">+</button>
+            </div>
+            <div class="btn-box">
+              <button type="button" class="number btn btn-grey">1</button>
+            </div>
+            <div class="btn-box">
+              <button type="button" class="number btn btn-grey">2</button>
+            </div>
+            <div class="btn-box">
+              <button type="button" class="number btn btn-grey">3</button>
+            </div>
+            <div class="btn-box btn-equal">
+              <button type="button" class="operator btn btn-orange" id="result">=</button>
+            </div>
+            <div class="btn-box btn-long">
+              <button type="button" class="number btn btn-grey">0</button>
+            </div>
+            <div class="btn-box">
+              <button type="button" class="btn btn-orange" id="decimal">.</button>
+            </div>
           </div>
         </div>
       </div>
