@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'LEDCalculator';
-  src: url('assets/font/LEDCalculator.ttf');
+  src: url('/calculator/assets/font/LEDCalculator.ttf');
   font-weight: normal;
   font-style: normal;
 }
