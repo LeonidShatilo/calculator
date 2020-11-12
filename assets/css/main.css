@@ -1,0 +1,105 @@
+@font-face {
+  font-family: 'LEDCalculator';
+  src: url('assets/font/LEDCalculator.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.container {
+  width: 500px;
+  margin: 0 auto;
+  padding: 70px 0;
+}
+
+.calculator {
+  width: 380px;
+  height: 570px;
+  margin: 0 auto;
+  padding: 50px 30px 30px 30px;
+  border: 7px solid  #fabf40;
+  border-radius: 30px;
+  background-color: #FFD273;
+}
+
+.display {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.display-input {
+  display: block;
+  width: 85%;
+  margin: 0;
+  padding: 0 20px;
+  height: 75px;
+  border: 5px solid #b8964f;
+  border-radius: 20px;
+  font-family: 'LEDCalculator';
+  font-size: 2.74em;
+  text-align: right;
+  color: #21362f;
+  background-color: #71ad99;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 15px;
+  width: 97%;
+  height: 75%;
+  margin: 40px auto 0px;
+}
+
+.btn {
+  width: 100%;
+  height: 100%;
+  border: 5px solid  #999077;
+  border-radius: 15px;
+  font-family: 'LEDCalculator';
+  font-size: 2.2em;
+  color: #fffbf1;
+  background-color: #c0b598;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-equal {
+  grid-row: span 2;
+}
+
+.btn-long {
+  grid-column: span 2;
+}
+
+.btn-blue:hover {
+  border: 5px solid  #3e35b8;
+  background-color: #5f55e9;
+  transition: 0.15s;
+}
+
+.btn-red:hover {
+  border: 5px solid  #b12828;
+  background-color: #c32e2e;
+  transition: 0.15s;
+}
+
+.btn-orange:hover {
+  border: 5px solid  #b85c12;
+  background-color: #ee7b1c;
+  transition: 0.15s;
+}
+
+.btn-grey:hover {
+  border: 5px solid  #8a8a8a;
+  background-color: #b8b8b8;
+  transition: 0.15s;
+}
+
+.btn-blue:active,
+.btn-red:active,
+.btn-orange:active,
+.btn-grey:active {
+  transform: scale(0.95);
+}
