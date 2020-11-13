@@ -5,10 +5,15 @@
   font-style: normal;
 }
 
-.container {
-  width: 500px;
-  margin: 0 auto;
-  padding: 70px 0;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .calculator {
@@ -16,9 +21,9 @@
   height: 570px;
   margin: 0 auto;
   padding: 50px 30px 30px 30px;
-  border: 7px solid  #fabf40;
-  border-radius: 30px;
-  background-color: #FFD273;
+  border: 2px solid  #d6d6d6;
+  border-radius: 15px;
+  background: #f8f8f8;
 }
 
 .display {
@@ -33,13 +38,13 @@
   margin: 0;
   padding: 0 20px;
   height: 75px;
-  border: 5px solid #b8964f;
-  border-radius: 20px;
+  border: 2px solid #76b8a2;
+  border-radius: 8px;
   font-family: 'LEDCalculator';
   font-size: 2.6em;
   text-align: right;
-  color: #21362f;
-  background-color: #71ad99;
+  color: #1f4134;
+  background-color: #8cd6bdaf;
 }
 
 .buttons {
@@ -49,20 +54,21 @@
   gap: 15px;
   width: 97%;
   height: 75%;
-  margin: 40px auto 0px;
+  margin: 40px auto 0;
 }
 
 .btn {
   width: 100%;
   height: 100%;
-  border: 5px solid  #999077;
-  border-radius: 15px;
+  border: 2px solid  #cccccc;
+  border-radius: 8px;
   font-family: 'LEDCalculator';
-  font-size: 2.2em;
-  color: #fffbf1;
-  background-color: #c0b598;
+  font-size: 1.8em;
+  color: #4d4d4d;
+  background-color: #f8f8f8;
   outline: none;
   cursor: pointer;
+  transition: 0.15s;
 }
 
 .btn-equal {
@@ -74,32 +80,29 @@
 }
 
 .btn-blue:hover {
-  border: 5px solid  #3e35b8;
-  background-color: #5f55e9;
-  transition: 0.15s;
+  border: 2px solid  #0026ff20;
+  background-color: #0026ff40;
 }
 
 .btn-red:hover {
-  border: 5px solid  #b12828;
-  background-color: #c32e2e;
-  transition: 0.15s;
+  border: 2px solid  #ff000030;
+  background-color: #ff000050;
 }
 
 .btn-orange:hover {
-  border: 5px solid  #b85c12;
-  background-color: #ee7b1c;
-  transition: 0.15s;
+  border: 2px solid  #ff730030;
+  background-color: #ff730050;
 }
 
-.btn-grey:hover {
-  border: 5px solid  #8a8a8a;
-  background-color: #b8b8b8;
-  transition: 0.15s;
+.btn-green:hover {
+  border: 2px solid  #208f1630;
+  background-color: #208f1650;
 }
 
 .btn-blue:active,
 .btn-red:active,
 .btn-orange:active,
-.btn-grey:active {
-  transform: scale(0.95);
+.btn-green:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 9px 0 rgba(80, 50, 50, 0.35) inset;
 }
