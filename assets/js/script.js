@@ -2,8 +2,11 @@ let numbers = document.querySelectorAll('.number'),
   operations = document.querySelectorAll('.operator'),
   clearBtns = document.querySelectorAll('.clear-btn'),
   decimalBtn = document.getElementById('decimal'),
-  resultBtn = document.getElementById('result'),
   display = document.getElementById('display'),
+  eulers = document.getElementById('e'),
+  pi = document.getElementById('pi'),
+  square = document.getElementById('x2'),
+  sqrt = document.getElementById('sqr-root'),
   MemoryCurrentNumber = 0,
   MemoryNewNumber = false,
   MemoryPendingOperation = '';
@@ -14,26 +17,6 @@ for (let i = 0; i < numbers.length; i++) {
     numberPress(e.target.textContent);
   });
 }
-
-for (let i = 0; i < operations.length; i++) {
-  let operation = operations[i];
-  operation.addEventListener('click', function (e) {
-    operationPress(e.target.textContent);
-  });
-}
-
-for (let i = 0; i < clearBtns.length; i++) {
-  let clearBtn = clearBtns[i];
-  clearBtn.addEventListener('click', function (e) {
-    clear(e.target.id);
-  });
-}
-  
-decimalBtn.addEventListener('click', decimal);
-
-result.addEventListener('click', function (e) {
-  console.log('Клик по кнопке result');
-});
 
 function numberPress(number) {
   if (MemoryNewNumber) {
@@ -49,6 +32,13 @@ function numberPress(number) {
   console.log(`Клик по кнопке с номером ${number}`);
 }
 
+for (let i = 0; i < operations.length; i++) {
+  let operation = operations[i];
+  operation.addEventListener('click', function (e) {
+    operationPress(e.target.textContent);
+  });
+}
+
 function operationPress(symbol) {
   let localOperationMemory = display.value;
   if (MemoryNewNumber && MemoryPendingOperation !== '=') {
@@ -59,9 +49,9 @@ function operationPress(symbol) {
       MemoryCurrentNumber += parseFloat(localOperationMemory);
     } else if (MemoryPendingOperation === '-') {
       MemoryCurrentNumber -= parseFloat(localOperationMemory);
-    } else if (MemoryPendingOperation === '*') {
+    } else if (MemoryPendingOperation === '×') {
       MemoryCurrentNumber *= parseFloat(localOperationMemory);
-    } else if (MemoryPendingOperation === '/') {
+    } else if (MemoryPendingOperation === '÷') {
       MemoryCurrentNumber /= parseFloat(localOperationMemory);
     } else {
       MemoryCurrentNumber = parseFloat(localOperationMemory);
@@ -71,6 +61,28 @@ function operationPress(symbol) {
   }
   console.log(`Клик по кнопке с операцией ${symbol}`);
 }
+
+for (let i = 0; i < clearBtns.length; i++) {
+  let clearBtn = clearBtns[i];
+  clearBtn.addEventListener('click', function (e) {
+    clear(e.target.id);
+  });
+}
+
+function clear(id) {
+  if (id === 'ce') {
+    display.value = '0';
+    MemoryNewNumber = true;
+  } else if (id === 'c') {
+    display.value = '0';
+    MemoryNewNumber = true;
+    MemoryCurrentNumber = 0;
+    MemoryPendingOperation = '';
+  }
+  console.log(`Клик по кнопке ${id}`);
+}
+  
+decimalBtn.addEventListener('click', decimal);
 
 function decimal(argument) {
   let localDecimalMemory = display.value;
@@ -86,15 +98,60 @@ function decimal(argument) {
   console.log('Клик по кнопке decimal');
 }
 
-function clear(id) {
-  if (id === 'ce') {
-    display.value = '0';
-    MemoryNewNumber = true;
-  } else if (id === 'c') {
-    display.value = '0';
-    MemoryNewNumber = true;
-    MemoryCurrentNumber = 0;
-    MemoryPendingOperation = '';
+eulers.addEventListener('click', function(e) {
+  numberEulers(e.target.id);
+});
+
+function numberEulers(argument) {
+  if (MemoryNewNumber) {
+    display.value = Math.E;
+    MemoryNewNumber = false;
+  } else {
+    display.value = Math.E;
   }
-  console.log(`Клик по кнопке ${id}`);
+  console.log('Клик по кнопке e');
+}
+
+pi.addEventListener('click', function(e) {
+  numberPi(e.target.id);
+});
+
+function numberPi(argument) {
+  if (MemoryNewNumber) {
+    display.value = Math.PI;
+    MemoryNewNumber = false;
+  } else {
+    display.value = Math.PI;
+  }
+  console.log('Клик по кнопке π');
+}
+
+square.addEventListener('click', function(e) {
+  numberSquare(e.target.id);
+});
+
+function numberSquare(argument) {
+  let MemoryCurrentNum = display.value;
+  if (MemoryNewNumber) {
+    display.value = Math.pow(MemoryCurrentNum, 2);
+    MemoryNewNumber = false;
+  } else {
+    display.value = Math.pow(MemoryCurrentNum, 2);
+  }
+  console.log('Клик по кнопке x2');
+}
+
+sqrt.addEventListener('click', function(e) {
+  numberSquareRoot(e.target.id);
+});
+
+function numberSquareRoot(argument) {
+  let MemoryCurrentSqrt = display.value;
+  if (MemoryNewNumber) {
+    display.value = Math.sqrt(MemoryCurrentSqrt);
+    MemoryNewNumber = false;
+  } else {
+    display.value = Math.sqrt(MemoryCurrentSqrt);
+  }
+  console.log('Клик по кнопке square root');
 }
