@@ -23,7 +23,10 @@ function numberPress(number) {
     display.value = number;
     MemoryNewNumber = false;
   } else {
-    if (display.value === '0') {
+    if (display.value === '0' ||
+        display.value === '2.718281828459045' ||
+        display.value === '3.141592653589793')
+    {
       display.value = number;
     } else {
       display.value += number;
@@ -42,7 +45,7 @@ for (let i = 0; i < operations.length; i++) {
 function operationPress(symbol) {
   let localOperationMemory = display.value;
   if (MemoryNewNumber && MemoryPendingOperation !== '=') {
-    display.value = MemoryCurrentNumber;
+    display.value = localOperationMemory;
   } else {
     MemoryNewNumber = true;
     if (MemoryPendingOperation === '+') {
@@ -108,6 +111,7 @@ function numberEulers(argument) {
     MemoryNewNumber = false;
   } else {
     display.value = Math.E;
+    MemoryNewNumber = true;
   }
   console.log('Клик по кнопке e');
 }
@@ -122,6 +126,7 @@ function numberPi(argument) {
     MemoryNewNumber = false;
   } else {
     display.value = Math.PI;
+    MemoryNewNumber = true;
   }
   console.log('Клик по кнопке π');
 }
@@ -131,12 +136,12 @@ square.addEventListener('click', function(e) {
 });
 
 function numberSquare(argument) {
-  let MemoryCurrentNum = display.value;
+  let MemoryNumSquare = display.value;
   if (MemoryNewNumber) {
-    display.value = Math.pow(MemoryCurrentNum, 2);
-    MemoryNewNumber = false;
+    display.value = Math.pow(MemoryNumSquare, 2);
   } else {
-    display.value = Math.pow(MemoryCurrentNum, 2);
+    display.value = Math.pow(MemoryNumSquare, 2);
+    MemoryNewNumber = true;
   }
   console.log('Клик по кнопке x2');
 }
@@ -146,12 +151,12 @@ sqrt.addEventListener('click', function(e) {
 });
 
 function numberSquareRoot(argument) {
-  let MemoryCurrentSqrt = display.value;
+  let MemoryNumSqrt = display.value;
   if (MemoryNewNumber) {
-    display.value = Math.sqrt(MemoryCurrentSqrt);
-    MemoryNewNumber = false;
+    display.value = Math.sqrt(MemoryNumSqrt);
   } else {
-    display.value = Math.sqrt(MemoryCurrentSqrt);
+    display.value = Math.sqrt(MemoryNumSqrt);
+    MemoryNewNumber = true;
   }
   console.log('Клик по кнопке square root');
 }
