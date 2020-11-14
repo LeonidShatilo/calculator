@@ -79,22 +79,29 @@ body {
   grid-column: span 2;
 }
 
-.btn-blue:hover {
+.btn-blue:hover,
+.btn-red:hover,
+.btn-orange:hover,
+.btn-green:hover {
+  background-color: #ffffff;
+}
+
+.btn-blue:active {
   border: 2px solid  #0026ff20;
   background-color: #0026ff40;
 }
 
-.btn-red:hover {
+.btn-red:active {
   border: 2px solid  #ff000030;
   background-color: #ff000050;
 }
 
-.btn-orange:hover {
+.btn-orange:active {
   border: 2px solid  #ff730030;
   background-color: #ff730050;
 }
 
-.btn-green:hover {
+.btn-green:active {
   border: 2px solid  #208f1630;
   background-color: #208f1650;
 }
