@@ -24,6 +24,7 @@ body {
   border: 2px solid  #d6d6d6;
   border-radius: 15px;
   background: #f8f8f8;
+  transition: 0.15s;
 }
 
 .display {
@@ -31,6 +32,7 @@ body {
   justify-content: center;
   width: 100%;
   height: 14%;
+  transition: 0.15s;
 }
 
 .display-input {
@@ -45,6 +47,7 @@ body {
   text-align: right;
   color: #1f4134;
   background-color: #8cd6bdaf;
+  transition: 0.15s;
 }
 
 .buttons {
@@ -55,6 +58,7 @@ body {
   width: 97%;
   height: 75%;
   margin: 10% auto 0;
+  transition: 0.15s;
 }
 
 .btn {
@@ -112,4 +116,53 @@ body {
 .btn-green:active {
   transform: scale(0.97);
   box-shadow: 0 0 9px 0 rgba(80, 50, 50, 0.35) inset;
+}
+
+@media screen and (max-width: 500px) {
+  .calculator {
+    width: 320px;
+    height: 480px;
+    padding: 45px 25px 25px 25px;
+  }
+  .display-input {
+    font-size: 2.4em;
+  }
+  .btn {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .calculator {
+    width: 300px;
+    height: 450px;
+    padding: 40px 20px 20px 20px;
+  }
+  .display-input {
+    font-size: 2.2em;
+  }
+  .btn {
+    font-size: 1.3em;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .calculator {
+    width: 280px;
+    height: 420px;
+    padding: 35px 15px 15px 15px;
+  }
+  .display-input {
+    font-size: 2em;
+  }
+  .btn {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .calculator {
+    width: 260px;
+    height: 390px;
+  }
 }
