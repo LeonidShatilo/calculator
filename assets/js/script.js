@@ -32,7 +32,6 @@ function numberPress(number) {
       display.value += number;
     }
   }
-  console.log(`Клик по кнопке с номером ${number}`);
 }
 
 for (let i = 0; i < operations.length; i++) {
@@ -62,7 +61,6 @@ function operationPress(symbol) {
     display.value = parseFloat(MemoryCurrentNumber);
     MemoryPendingOperation = symbol;
   }
-  console.log(`Клик по кнопке с операцией ${symbol}`);
 }
 
 for (let i = 0; i < clearBtns.length; i++) {
@@ -82,7 +80,6 @@ function clear(id) {
     MemoryCurrentNumber = 0;
     MemoryPendingOperation = '';
   }
-  console.log(`Клик по кнопке ${id}`);
 }
   
 decimalBtn.addEventListener('click', decimal);
@@ -98,7 +95,6 @@ function decimal(argument) {
     }
   }
   display.value = localDecimalMemory;
-  console.log('Клик по кнопке decimal');
 }
 
 eulers.addEventListener('click', function(e) {
@@ -113,7 +109,6 @@ function numberEulers(argument) {
     display.value = Math.E;
     MemoryNewNumber = true;
   }
-  console.log('Клик по кнопке e');
 }
 
 pi.addEventListener('click', function(e) {
@@ -128,7 +123,6 @@ function numberPi(argument) {
     display.value = Math.PI;
     MemoryNewNumber = true;
   }
-  console.log('Клик по кнопке π');
 }
 
 square.addEventListener('click', function(e) {
@@ -143,7 +137,6 @@ function numberSquare(argument) {
     display.value = Math.pow(MemoryNumSquare, 2);
     MemoryNewNumber = true;
   }
-  console.log('Клик по кнопке x2');
 }
 
 sqrt.addEventListener('click', function(e) {
@@ -158,5 +151,4 @@ function numberSquareRoot(argument) {
     display.value = Math.sqrt(MemoryNumSqrt);
     MemoryNewNumber = true;
   }
-  console.log('Клик по кнопке square root');
 }
