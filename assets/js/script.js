@@ -1,15 +1,15 @@
 let numbers = document.querySelectorAll('.number'),
-  operations = document.querySelectorAll('.operator'),
-  clearBtns = document.querySelectorAll('.clear-btn'),
-  decimalBtn = document.getElementById('decimal'),
-  display = document.getElementById('display'),
-  eulers = document.getElementById('e'),
-  pi = document.getElementById('pi'),
-  square = document.getElementById('x2'),
-  sqrt = document.getElementById('sqr-root'),
-  MemoryCurrentNumber = 0,
-  MemoryNewNumber = false,
-  MemoryPendingOperation = '';
+    operations = document.querySelectorAll('.operator'),
+    clearBtns = document.querySelectorAll('.clear-btn'),
+    decimalBtn = document.getElementById('decimal'),
+    display = document.getElementById('display'),
+    square = document.getElementById('x2'),
+    sqrt = document.getElementById('sqr-root'),
+    MemoryCurrentNumber = 0,
+    MemoryPendingOperation = '',
+    IsNewNumber = false;
+const EULERS = document.getElementById('e'),
+      PI = document.getElementById('pi');
   
 for (let i = 0; i < numbers.length; i++) {
   let number = numbers[i];
@@ -19,13 +19,13 @@ for (let i = 0; i < numbers.length; i++) {
 }
 
 function numberPress(number) {
-  if (MemoryNewNumber) {
+  if (IsNewNumber) {
     display.value = number;
-    MemoryNewNumber = false;
+    IsNewNumber = false;
   } else {
     if (display.value === '0' ||
-        display.value === '2.718281828459045' ||
-        display.value === '3.141592653589793')
+        display.value === Math.E ||
+        display.value === Math.PI)
     {
       display.value = number;
     } else {
@@ -43,10 +43,10 @@ for (let i = 0; i < operations.length; i++) {
 
 function operationPress(symbol) {
   let localOperationMemory = display.value;
-  if (MemoryNewNumber && MemoryPendingOperation !== '=') {
+  if (IsNewNumber && MemoryPendingOperation !== '=') {
     display.value = localOperationMemory;
   } else {
-    MemoryNewNumber = true;
+    IsNewNumber = true;
     if (MemoryPendingOperation === '+') {
       MemoryCurrentNumber += parseFloat(localOperationMemory);
     } else if (MemoryPendingOperation === '-') {
@@ -73,10 +73,10 @@ for (let i = 0; i < clearBtns.length; i++) {
 function clear(id) {
   if (id === 'ce') {
     display.value = '0';
-    MemoryNewNumber = true;
+    IsNewNumber = true;
   } else if (id === 'c') {
     display.value = '0';
-    MemoryNewNumber = true;
+    IsNewNumber = true;
     MemoryCurrentNumber = 0;
     MemoryPendingOperation = '';
   }
@@ -86,9 +86,9 @@ decimalBtn.addEventListener('click', decimal);
 
 function decimal(argument) {
   let localDecimalMemory = display.value;
-  if (MemoryNewNumber) {
+  if (IsNewNumber) {
     localDecimalMemory = '0.';
-    MemoryNewNumber = false;
+    IsNewNumber = false;
   } else {
     if (localDecimalMemory.indexOf('.') === -1) {
       localDecimalMemory += '.';
@@ -97,31 +97,31 @@ function decimal(argument) {
   display.value = localDecimalMemory;
 }
 
-eulers.addEventListener('click', function(e) {
+EULERS.addEventListener('click', function(e) {
   numberEulers(e.target.id);
 });
 
 function numberEulers(argument) {
-  if (MemoryNewNumber) {
+  if (IsNewNumber) {
     display.value = Math.E;
-    MemoryNewNumber = false;
+    IsNewNumber = false;
   } else {
     display.value = Math.E;
-    MemoryNewNumber = true;
+    IsNewNumber = true;
   }
 }
 
-pi.addEventListener('click', function(e) {
+PI.addEventListener('click', function(e) {
   numberPi(e.target.id);
 });
 
 function numberPi(argument) {
-  if (MemoryNewNumber) {
+  if (IsNewNumber) {
     display.value = Math.PI;
-    MemoryNewNumber = false;
+    IsNewNumber = false;
   } else {
     display.value = Math.PI;
-    MemoryNewNumber = true;
+    IsNewNumber = true;
   }
 }
 
@@ -131,11 +131,11 @@ square.addEventListener('click', function(e) {
 
 function numberSquare(argument) {
   let MemoryNumSquare = display.value;
-  if (MemoryNewNumber) {
+  if (IsNewNumber) {
     display.value = Math.pow(MemoryNumSquare, 2);
   } else {
     display.value = Math.pow(MemoryNumSquare, 2);
-    MemoryNewNumber = true;
+    IsNewNumber = true;
   }
 }
 
@@ -145,10 +145,10 @@ sqrt.addEventListener('click', function(e) {
 
 function numberSquareRoot(argument) {
   let MemoryNumSqrt = display.value;
-  if (MemoryNewNumber) {
+  if (IsNewNumber) {
     display.value = Math.sqrt(MemoryNumSqrt);
   } else {
     display.value = Math.sqrt(MemoryNumSqrt);
-    MemoryNewNumber = true;
+    IsNewNumber = true;
   }
 }
