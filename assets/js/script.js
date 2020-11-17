@@ -47,16 +47,21 @@ function operationPress(symbol) {
     display.value = localOperationMemory;
   } else {
     IsNewNumber = true;
-    if (MemoryPendingOperation === '+') {
-      MemoryCurrentNumber += parseFloat(localOperationMemory);
-    } else if (MemoryPendingOperation === '-') {
-      MemoryCurrentNumber -= parseFloat(localOperationMemory);
-    } else if (MemoryPendingOperation === '×') {
-      MemoryCurrentNumber *= parseFloat(localOperationMemory);
-    } else if (MemoryPendingOperation === '÷') {
-      MemoryCurrentNumber /= parseFloat(localOperationMemory);
-    } else {
-      MemoryCurrentNumber = parseFloat(localOperationMemory);
+    switch (MemoryPendingOperation) {
+      case '+':
+        MemoryCurrentNumber += parseFloat(localOperationMemory);
+        break;
+      case '-':
+        MemoryCurrentNumber -= parseFloat(localOperationMemory);
+        break;
+      case '×':
+        MemoryCurrentNumber *= parseFloat(localOperationMemory);
+        break;
+      case '÷':
+        MemoryCurrentNumber /= parseFloat(localOperationMemory);
+        break;
+      default:
+        MemoryCurrentNumber = parseFloat(localOperationMemory);
     }
     display.value = parseFloat(MemoryCurrentNumber);
     MemoryPendingOperation = symbol;
