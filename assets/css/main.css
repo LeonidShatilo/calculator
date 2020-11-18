@@ -1,0 +1,168 @@
+@font-face {
+  font-family: 'LEDCalculator';
+  src: url('/calculator/assets/font/LEDCalculator.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.calculator {
+  width: 380px;
+  height: 570px;
+  margin: 0 auto;
+  padding: 50px 30px 30px 30px;
+  border: 2px solid  #d6d6d6;
+  border-radius: 15px;
+  background: #f8f8f8;
+  transition: 0.15s;
+}
+
+.display {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 14%;
+  transition: 0.15s;
+}
+
+.display-input {
+  display: block;
+  width: 85%;
+  margin: 0;
+  padding: 0 5%;
+  border: 2px solid #76b8a2;
+  border-radius: 8px;
+  font-family: 'LEDCalculator';
+  font-size: 2.6em;
+  text-align: right;
+  color: #1f4134;
+  background-color: #8cd6bdaf;
+  transition: 0.15s;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 5%;
+  width: 97%;
+  height: 75%;
+  margin: 10% auto 0;
+  transition: 0.15s;
+}
+
+.btn {
+  width: 100%;
+  height: 100%;
+  border: 2px solid  #cccccc;
+  border-radius: 8px;
+  font-family: 'LEDCalculator';
+  font-size: 1.8em;
+  color: #4d4d4d;
+  background-color: #f8f8f8;
+  outline: none;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.btn-equal {
+  grid-row: span 2;
+}
+
+.btn-long {
+  grid-column: span 2;
+}
+
+.btn-blue:hover,
+.btn-red:hover,
+.btn-orange:hover,
+.btn-green:hover {
+  background-color: #ffffff;
+}
+
+.btn-blue:active {
+  border: 2px solid  #0026ff20;
+  background-color: #0026ff40;
+}
+
+.btn-red:active {
+  border: 2px solid  #ff000030;
+  background-color: #ff000050;
+}
+
+.btn-orange:active {
+  border: 2px solid  #ff730030;
+  background-color: #ff730050;
+}
+
+.btn-green:active {
+  border: 2px solid  #208f1630;
+  background-color: #208f1650;
+}
+
+.btn-blue:active,
+.btn-red:active,
+.btn-orange:active,
+.btn-green:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 9px 0 rgba(80, 50, 50, 0.35) inset;
+}
+
+@media screen and (max-width: 500px) {
+  .calculator {
+    width: 320px;
+    height: 480px;
+    padding: 45px 25px 25px 25px;
+  }
+  .display-input {
+    font-size: 2.4em;
+  }
+  .btn {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .calculator {
+    width: 300px;
+    height: 450px;
+    padding: 40px 20px 20px 20px;
+  }
+  .display-input {
+    font-size: 2.2em;
+  }
+  .btn {
+    font-size: 1.3em;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .calculator {
+    width: 280px;
+    height: 420px;
+    padding: 35px 15px 15px 15px;
+  }
+  .display-input {
+    font-size: 2em;
+  }
+  .btn {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .calculator {
+    width: 260px;
+    height: 390px;
+  }
+}
