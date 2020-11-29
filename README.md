@@ -8,4 +8,5 @@
 
 **Description**
 
-The simplest calculator that performs mathematical operations: addition, subtraction, multiplication and division. An additional series of buttons was implemented: Euler number, Pi number, square root.
+The simplest calculator that performs mathematical operations: addition, subtraction, multiplication and division.
+An additional series of buttons was implemented: Euler number, Pi number, square root.
